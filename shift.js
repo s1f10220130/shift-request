@@ -1,14 +1,23 @@
 function display_week(){
+    ///年と月を取得、その月を表示する
     var year = document.getElementById("year").value;
     var month = document.getElementById("month").value;
+    var month_of_year = document.getElementById("first_day_of_year");
+    month_of_year.textContent = year;
     var output_month = document.getElementById("first_day_month");
     output_month.textContent = month;
+    ///出力文に年と月を表示する
+    var month_output = document.getElementById("output");
+    month_output.textContent += "お疲れ様です。" + month + "月のシフト希望を提出させていただきます。";
+    ///コピペで持ってきた曜日算出
     var day_of_week = [ "日", "月", "火", "水", "木", "金", "土" ] ;
     var js_month = month - 1 ;
     var date = new Date(year, js_month, 1);
     var first_day = document.getElementById("first_day");
     first_day.textContent = day_of_week[date.getDay()]
+    ///その月の初めの曜日を求める
     var day_of_week_number = date.getDay();
+    ///気合の日付決定
     var sun1 = document.getElementById("sun-1");
     var mon1 = document.getElementById("mon-1");
     var tue1 = document.getElementById("tue-1");
@@ -51,6 +60,7 @@ function display_week(){
     var thu6 = document.getElementById("thu-6");
     var fri6 = document.getElementById("fri-6");
     var sat6 = document.getElementById("sat-6");
+    ///気合のカレンダー表示、Copilot君居なかったらﾀﾋんでた
     if (day_of_week_number == 0){
         sun1.textContent = "1";
         mon1.textContent = "2";
@@ -362,7 +372,27 @@ function display_week(){
 }
 
 function display_output(){
+    ///年月日から曜日を求める
+    var year = document.getElementById("year").value;
+    var month = document.getElementById("month").value;
     var day = document.getElementById("day").value;
-    var day_of_week = document.getElementById("day_of_week");
-    day_of_week.textContent = day_of_week[day];
+    var day_of_week = new Date(year, month - 1, day).getDay();
+    var day_of_week_name_list = [ "(日)", "(月)", "(火)", "(水)", "(木)", "(金)", "(土)" ] ;
+    var day_of_week_name = day_of_week_name_list[day_of_week];
+    ///日程を出力
+    var output_request_day = document.getElementById("output");
+    output_request_day.textContent += "\n" + day + day_of_week_name;
+    ///時間を出力
+    var output_request_time = document.getElementById("time").value;
+    output.textContent += output_request_time;
+}
+
+function finish(){
+    var output = document.getElementById("output");
+    output.textContent += "\n以上になります。よろしくお願いします。";
+}
+
+function reset(){
+    var output = document.getElementById("output");
+    output.textContent = "";
 }
