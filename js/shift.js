@@ -385,6 +385,8 @@ function display_output(){
     ///時間を出力
     var output_request_time = document.getElementById("time").value;
     output.textContent += output_request_time;
+    ///時間の欄を空白に戻す
+    document.getElementById("time").value = "";
 }
 
 function finish(){
