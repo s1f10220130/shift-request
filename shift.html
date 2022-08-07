@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="shift.js"></script>
+</head>
+<body>
+    年と月を入力してください<br>
+    <select name="year" id="year">
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+    </select>
+    <select name="month" id="month">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <input type="button" value="確定" onclick="display_week()">
+    <br>
+    <span id="first_day_month"></span>月１日は<span id="first_day"></span>曜日です(確認用)
+    <br><br>
+    <!--カレンダー-->
+    <table id="calendar">
+    <tr><th>日</th> <th>月</th> <th>火</th> <th>水</th> <th>木</th> <th>金</th> <th>土</th></tr>
+    <tr><td id="sun-1"></td> <td id="mon-1"></td> <td id="tue-1"></td> <td id="wed-1"></td> <td id="thu-1"></td> <td id="fri-1"></td> <td id="sat-1"></td></tr>
+    <tr><td id="sun-2"></td> <td id="mon-2"> </td> <td id="tue-2"></td> <td id="wed-2"></td> <td id="thu-2"></td> <td id="fri-2"></td> <td id="sat-2"></td></tr>
+    <tr><td id="sun-3"></td> <td id="mon-3"> </td> <td id="tue-3"></td> <td id="wed-3"></td> <td id="thu-3"></td> <td id="fri-3"></td> <td id="sat-3"></td></tr>
+    <tr><td id="sun-4"></td> <td id="mon-4"> </td> <td id="tue-4"></td> <td id="wed-4"></td> <td id="thu-4"></td> <td id="fri-4"></td> <td id="sat-4"></td></tr>
+    <tr><td id="sun-5"></td> <td id="mon-5"> </td> <td id="tue-5"></td> <td id="wed-5"></td> <td id="thu-5"></td> <td id="fri-5"></td> <td id="sat-5"></td></tr>
+    </table>
+
+    <!--記入欄-->
+    <br>
+    日付と時間を入力してさい<br>
+    <select name="day" id="day">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+    </select>
+    <input type="button" value="確定" onclick="display_output()">
+    <!--出力欄-->
+    <br><br>
+    <textarea name="output" id="output" rows="10"></textarea>
+    
+</body>
+</html>
