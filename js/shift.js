@@ -398,3 +398,8 @@ function reset(){
     var output = document.getElementById("output");
     output.textContent = "";
 }
+
+function back(){
+    var output_latest = document.getElementById("output");
+    output_latest.textContent = output_latest.textContent.slice(0, -1);
+}
